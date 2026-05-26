@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <style>
+            .domain-search-form {
+                font-family: "Inter", sans-serif;
+                display: flex;
+                align-items: stretch;
+                justify-content: space-between;
+                gap: 0.75rem;
+            }
+            .domain-search-form .input-wrapper {
+                flex-grow: 1;
+                background-color: #ffffff;
+                position: relative;
+            }
+            .domain-search-form .buttons {
+                display: flex;
+                gap: 0.75rem;
+            }
+            .domain-search-form .input-wrapper img {
+                width: 1.5rem;
+                position: absolute;
+                top: 0.45rem;
+                left: 1rem;
+            }
+            .domain-search-form .input-text {
+                width: 100%;
+                padding: 0.5rem;
+                padding-left: 3rem;
+                font-size: 0.9rem;
+                border-width: 0;
+                outline: 1px solid #afc4c3;
+                transition: background 0.3s;
+            }
+            .domain-search-form .input-text:focus {
+                box-shadow: 0 0 0 2px #a8dedd;
+                background-color: #f1f8f8;
+            }
+            .domain-search-form .btn {
+                color: #ffffff;
+                font-size: 0.95rem;
+                border-width: 0;
+            }
+            .domain-search-form .btn.transfer {
+                color: #00c71e;
+                background-color: transparent;
+                outline: 1px solid #00c71e;
+            }
+            .dmn-error-area {
+                display: none;
+                color: #dc3545;
+                margin-top: 0.25rem;
+                font-size: 0.9rem;
+            }
+            .dmn-error-area.show {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="domain-search-form" action="#">
+            <div class="input-wrapper">
+                <img
+                    src="https://bartekict.com/wp-content/uploads/2026/04/globe-2-svgrepo-com.png"
+                    alt="globe"
+                />
+                <input
+                    type="text"
+                    class="input-text"
+                    id="domaininput"
+                    placeholder="Search domain name"
+                />
+            </div>
+            <div class="buttons">
+                <button class="btn register">Search</button>
+                <button class="btn transfer">Transfer</button>
+            </div>
+        </form>
+        <div class="dmn-error-area">
+            <p id="errorMsgText">Validation message</p>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            $(document).ready(function () {
+                let actionType = "register"; // default
+
+                // Detect which button is clicked
+                $(".btn.register").on("click", function (e) {
+                    actionType = "register";
+                });
+
+                $(".btn.transfer").on("click", function (e) {
+                    actionType = "transfer";
+                });
+
+                // Form submit handler
+                $(".domain-search-form").on("submit", function (e) {
+                    e.preventDefault();
+
+                    const domainInput = $("#domaininput").val().trim();
+                    const errorBox = $("#errorMsgText");
+
+                    // Clear previous error
+                    $(".dmn-error-area").removeClass("show");
+
+                    // Validate empty
+                    if (!domainInput) {
+                        showError("Please enter a domain name.");
+                        return;
+                    }
+
+                    // Basic sanitization (remove spaces & unsafe chars)
+                    const sanitizedDomain = domainInput
+                        .toLowerCase()
+                        .replace(/[^a-z0-9.-]/g, "");
+
+                    // Domain regex validation
+                    const domainRegex =
+                        /^(?!-)[a-z0-9-]{1,63}(?<!-)\.[a-z]{2,}$/;
+
+                    if (!domainRegex.test(sanitizedDomain)) {
+                        showError(
+                            "Please enter a valid domain (e.g. example.com).",
+                        );
+                        return;
+                    }
+
+                    // Encode for URL safety
+                    const encodedDomain = encodeURIComponent(sanitizedDomain);
+
+                    let redirectURL = "";
+
+                    if (actionType === "register") {
+                        redirectURL = `https://billing.bartekict.com/domain-search.php?domain=${encodedDomain}`;
+                    } else {
+                        redirectURL = `https://billing.bartekict.com/domain-transfer.php?domain=&query=${encodedDomain}`;
+                    }
+
+                    // Redirect securely
+                    window.location.href = redirectURL;
+                });
+
+                // Error display function
+                function showError(message) {
+                    $(".dmn-error-area").addClass("show");
+                    $("#errorMsgText").html(message);
+                }
+            });
+        </script>
+    </body>
+</html>

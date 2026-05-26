@@ -1,0 +1,264 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* :root { */
+.bartek-header {
+    --e-global-color-secondary: #00c747;
+    --e-global-color-text: #191919;
+    --e-global-color-accent: #c9f001;
+    --e-global-color-6f64d03: #ffffff;
+    --e-global-color-55fa538: #333333;
+    --e-global-color-11e15ff: #666666;
+    --e-global-color-3157778: #41a2a0;
+    --e-global-typography-primary-font-family: "Red Hat Display";
+
+    font-family: var(--e-global-typography-primary-font-family);
+    line-height: 1.5;
+}
+.bartek-header img {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+    max-width: 100%;
+}
+.bartek-header .inner-element {
+    margin: 0 auto;
+    max-width: 1260px;
+}
+
+.bartek-header .top-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7rem 0;
+
+    background-color: transparent;
+    background-image: linear-gradient(
+        90deg,
+        #57b165 0%,
+        var(--e-global-color-accent) 100%
+    );
+}
+.bartek-header .top-wrapper .heading-title {
+    margin: 0;
+    font-family: "Red Hat Display", Sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--e-global-color-text);
+    line-height: 1.2;
+}
+
+.bartek-header .actual-header {
+    background-color: #003c3c;
+}
+
+.bartek-header .actual-header .inner-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.bartek-header .actual-header .header-image {
+    width: 10rem;
+}
+.bartek-header .actual-header .header-menus {
+    width: 60%;
+}
+.bartek-header .actual-header .header-btns {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0.75rem;
+}
+.bartek-header .header-menus .nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.bartek-header .header-menus .menu-item {
+    position: relative;
+}
+.bartek-header .header-menus .menu-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: all 300ms;
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.bartek-header .header-menus .menu-title .top-link-text {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.bartek-header .header-menus .menu-title .top-link-text:hover {
+    color: var(--e-global-color-accent);
+}
+.bartek-header .header-menus .menu-title .dropdown-icon {
+    background-color: transparent;
+    border: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.bartek-header .header-menus .menu-title .opened {
+    display: none;
+}
+.bartek-header .header-menus .menu-title .closed {
+    display: flex;
+}
+.bartek-header .header-menus .menu-title span svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    fill: #ffffff;
+    transition: all 300ms;
+}
+
+.bartek-header .header-menus .menu-content {
+    position: absolute;
+    top: 100%;
+    left: -3rem;
+    z-index: 2147483620;
+    display: none;
+}
+.bartek-header .header-menus .menu-item:hover > .menu-content {
+    display: flex;
+}
+.bartek-header .header-menus .inner-wrapper {
+    margin-top: 1rem;
+    background-color: #ffffff;
+    width: 45rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.bartek-header .header-menus .inner-wrapper.content-width {
+    width: auto;
+    min-width: max-content;
+}
+.bartek-header .header-menus .menu-content .text-part {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.bartek-header .header-menus .menu-content .image-part {
+    display: flex;
+    width: 40%;
+    min-height: 12rem;
+    border-radius: 1rem;
+    background-image: url(https://bartekict.com/wp-content/uploads/2026/04/hm2-img01-4.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bartek-header .header-menus .menu-content .link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+}
+.bartek-header .header-menus .menu-content .image-element {
+    display: flex;
+    width: 4rem;
+    padding: 0.75rem;
+    background-color: #eef9e6;
+    border-radius: 1rem;
+}
+.bartek-header .header-menus .menu-content .image-element.domain-transfer {
+    background-color: #e3f2f2;
+}
+.bartek-header .header-menus .menu-content .image-element.web-hosting {
+    background-color: #f0f0ff;
+}
+.bartek-header .header-menus .menu-content .heading-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--e-global-color-55fa538);
+}
+.bartek-header .header-menus .menu-content .heading-text {
+    font-weight: 600;
+    color: var(--e-global-color-11e15ff);
+}
+
+.bartek-header .header-menus .menu-content .list-items {
+    list-style-type: none;
+}
+.bartek-header .header-menus .menu-content .list-items .item:not(:last-child) {
+    padding-block-end: calc(0.5rem / 2);
+}
+.bartek-header .header-menus .menu-content .list-items .item:not(:first-child) {
+    margin-block-start: calc(0.5rem / 2);
+}
+
+.bartek-header .header-menus .menu-content .list-items a {
+    font-family: "Inter", Sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--e-global-color-55fa538);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.bartek-header .header-menus .menu-content .list-items .item:hover a {
+    color: var(--e-global-color-3157778);
+}
+
+.bartek-header .header-btns .header-btn {
+    display: flex;
+    fill: var(--e-global-color-6f64d03);
+    color: var(--e-global-color-6f64d03);
+    border: 1px solid #ffffffb3;
+    padding: 0.65rem 1rem 0.65rem 1rem;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.bartek-header .header-btns .header-btn .e-font-icon-svg {
+    width: 1rem;
+    fill: var(--e-global-color-6f64d03);
+    color: var(--e-global-color-6f64d03);
+}
+.bartek-header .header-btns .header-btn.contact {
+    background-color: var(--e-global-color-secondary);
+    border-color: var(--e-global-color-secondary);
+}
+.bartek-header .header-btns .cart-btn {
+    position: relative;
+    padding: 0.65rem 0.8rem;
+}
+
+.bartek-header .header-btns .cart-counter {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff3b3b;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 6px;
+    border-radius: 50%;
+    min-width: 18px;
+    text-align: center;
+}
