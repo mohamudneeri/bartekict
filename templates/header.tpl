@@ -100,7 +100,7 @@
                                         <div class="text-part">
                                             <a
                                                 class="link"
-                                                href="https://bartekict.com/domains/domain-name-search/"
+                                                href="https://billing.bartekict.com/domain-search.php"
                                             >
                                                 <div class="image-element">
                                                     <img
@@ -122,14 +122,13 @@
                                                         Domain Name Search
                                                     </h4>
                                                     <p class="heading-text">
-                                                        Add Your Heading Text
-                                                        Here
+                                                        Find Your Perfect Domain
                                                     </p>
                                                 </div>
                                             </a>
                                             <a
                                                 class="link"
-                                                href="https://bartekict.com/domains/domain-transfer/"
+                                                href="https://billing.bartekict.com/domain-transfer.php"
                                             >
                                                 <div
                                                     class="image-element domain-transfer"
@@ -153,8 +152,7 @@
                                                         Domain Transfer
                                                     </h4>
                                                     <p class="heading-text">
-                                                        Add Your Heading Text
-                                                        Here
+                                                        Move Your Domain to BARTEK
                                                     </p>
                                                 </div>
                                             </a>
@@ -200,7 +198,7 @@
                                         <div class="text-part">
                                             <a
                                                 class="link"
-                                                href="https://bartekict.com/domains/domain-name-search/"
+                                                href="https://bartekict.com/hosting/shared-hosting/"
                                             >
                                                 <div
                                                     class="image-element web-hosting"
@@ -225,14 +223,13 @@
                                                         Web Hosting
                                                     </h4>
                                                     <p class="heading-text">
-                                                        Add Your Heading Text
-                                                        Here
+                                                        Fast & Reliable Shared Hosting
                                                     </p>
                                                 </div>
                                             </a>
                                             <a
                                                 class="link"
-                                                href="https://bartekict.com/domains/domain-transfer/"
+                                                href="https://bartekict.com/hosting/migrate-to-bartek/"
                                             >
                                                 <div
                                                     class="image-element domain-transfer"
@@ -256,8 +253,7 @@
                                                         Migrate To BARTEK
                                                     </h4>
                                                     <p class="heading-text">
-                                                        Add Your Heading Text
-                                                        Here
+                                                        Free, Hassle-Free Site Migration
                                                     </p>
                                                 </div>
                                             </a>
@@ -378,13 +374,6 @@
                                 <div class="menu-content">
                                     <div class="inner-wrapper content-width">
                                         <ul class="list-items">
-                                            <li class="item">
-                                                <a
-                                                    href="https://bartekict.com/support/contact-us/"
-                                                >
-                                                    Contact Us
-                                                </a>
-                                            </li>
                                             <li class="item">
                                                 <a
                                                     href="https://bartekict.com/support/knowledge-base/"

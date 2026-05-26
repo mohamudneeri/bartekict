@@ -235,7 +235,7 @@
                     <div class="widget-image">
                         <img
                             decoding="async"
-                            src="https://resell-press.com/layout07/wp-content/uploads/sites/14/2025/01/OF01.png"
+                            src="https://img.icons8.com/?size=100&id=mVo7XYRsVjnm&format=png&color=41b475"
                             title=""
                             alt=""
                             loading="lazy"
@@ -257,7 +257,7 @@
                     <div class="widget-image">
                         <img
                             decoding="async"
-                            src="https://resell-press.com/layout07/wp-content/uploads/sites/14/2025/01/OF01.png"
+                            src="https://img.icons8.com/?size=100&id=BOoSqyKuMzaN&format=png&color=41b475"
                             title=""
                             alt=""
                             loading="lazy"
@@ -279,7 +279,7 @@
                     <div class="widget-image">
                         <img
                             decoding="async"
-                            src="https://resell-press.com/layout07/wp-content/uploads/sites/14/2025/01/OF01.png"
+                            src="https://img.icons8.com/?size=100&id=U1ABXA16ytNP&format=png&color=41b475"
                             title=""
                             alt=""
                             loading="lazy"
@@ -301,7 +301,7 @@
                     <div class="widget-image">
                         <img
                             decoding="async"
-                            src="https://resell-press.com/layout07/wp-content/uploads/sites/14/2025/01/OF01.png"
+                            src="https://img.icons8.com/?size=100&id=dQLNANUBAmxh&format=png&color=41b475"
                             title=""
                             alt=""
                             loading="lazy"

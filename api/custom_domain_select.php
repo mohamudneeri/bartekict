@@ -65,6 +65,7 @@ function checkNewDomain() {
     // Availability check
     $whois  = localAPI('DomainWhois', ['domain' => $domain]);
     $status = ($whois['status'] === 'available') ? 'available' : 'unavailable';
+    $whois_status = $whois['status']; // Temp, remove after test
 
     // Pricing
     $pricing       = localAPI('GetTLDPricing');
@@ -80,6 +81,7 @@ function checkNewDomain() {
 
     echo json_encode([
         'status'        => $status,
+        'whois_status'  => $whois_status,
         'domain'        => $domain,
         'inCart'        => $inCart,
         'registerPrice' => number_format((float)$registerPrice, 2),
@@ -112,11 +114,13 @@ function checkTransferEligibility() {
      * ------------------------------------------------------------------ */
     $whois      = localAPI('DomainWhois', ['domain' => $domain]);
     $registered = ($whois['status'] !== 'available');
+    $whois_status = $whois['status']; // Temp, remove after test
 
     // Not registered at all
     if (!$registered) {
         echo json_encode([
             'status'        => 'success',
+            'whois_status' => $whois_status,
             'domain'        => $domain,
             'registered'    => false,
             'inWhmcs'       => false,

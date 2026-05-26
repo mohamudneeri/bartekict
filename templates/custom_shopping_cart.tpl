@@ -126,8 +126,17 @@
                                         <p class="form-error email"></p>
                                     </div>
                                     <div class="form-field phone">
-                                        <input type="text" class="input-text" id="inputPhone" placeholder=" " />
-                                        <span class="placeholder">Phone Number</span>
+                                        <div class="input-group">
+                                            <div class="group-addon">
+                                                <span class="group-text" id="inputPhoneCode">+999</span>
+                                            </div>
+                                            <input
+                                                type="tel"
+                                                id="inputPhone"
+                                                class="input-text"
+                                                placeholder="6XXXXXXXX"
+                                            />
+                                        </div>
                                         <p class="form-error phone-num"></p>
                                     </div>
                                 </div>
@@ -167,7 +176,11 @@
                                         <select class="drop-box" id="inputCountry">
                                             <option value="">Country</option>
                                             {foreach from=$countries item=country}
-                                            <option value="{$country.code|escape}">{$country.name|escape}</option>
+                                                <option 
+                                                    value="{$country.code|escape}"
+                                                    data-phonecode="{$country.phoneCode|escape}" 
+                                                    {if $country.code eq $selectedCountry}selected{/if}
+                                                >{$country.name|escape}</option>
                                             {/foreach}
                                         </select>
                                         <p class="form-error country"></p>

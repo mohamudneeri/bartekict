@@ -18,10 +18,11 @@ $(document).ready(() => {
 
     $(".new-user-header, .container-new-user").addClass("show");
     $(".paymethod-fields").removeClass("show");
+    updatePhoneCountryCode();
     updateCompleteOrderState();
 
     // ──────────────────────────────────────────────
-    // ERROR HELPERS
+    // HELPERS
     // ──────────────────────────────────────────────
 
     function showError($field, msg) {
@@ -36,6 +37,13 @@ $(document).ready(() => {
     function hideAllErrors() {
         $(".form-error").removeClass("show").text("");
         $(".input-text, .drop-box").removeClass("invalid");
+    }
+    
+    function updatePhoneCountryCode() {
+        const $selected = $("#inputCountry option:selected");
+        const phoneCode = $selected.data("phonecode") || "252";
+    
+        $("#inputPhoneCode").text(`${phoneCode}`);
     }
 
     // ──────────────────────────────────────────────
@@ -176,6 +184,10 @@ $(document).ready(() => {
         hideAllErrors();
         validateField(this.id);
         updateCompleteOrderState();
+    });
+    
+    $(document).on("change", "#inputCountry", function () {
+        updatePhoneCountryCode();
     });
 
     // ──────────────────────────────────────────────
@@ -467,7 +479,7 @@ $(document).ready(() => {
         const enableButton = customerValid && isPaymentValid();
 
         // Uncomment when ready to enforce:
-        // $("#btnCompleteOrder").prop("disabled", !enableButton);
+        $("#btnCompleteOrder").prop("disabled", !enableButton);
     }
 
     // ──────────────────────────────────────────────
@@ -478,6 +490,7 @@ $(document).ready(() => {
      * Show the .order-status overlay and scroll to it.
      */
     function showOrderStatus() {
+        $(".cart-container").addClass("blurred");
         $(".order-status").addClass("show");
         $("html, body").animate(
             { scrollTop: $(".order-status").offset().top - 80 },
@@ -636,6 +649,7 @@ $(document).ready(() => {
                     setTimeout(
                         () => {
                             $(".order-status").removeClass("show");
+                            $(".cart-container").removeClass("blurred");
                             $("#btnCompleteOrder").prop("disabled", false);
 
                             const errMsg =
@@ -660,6 +674,7 @@ $(document).ready(() => {
             })
             .fail(() => {
                 $(".order-status").removeClass("show");
+                $(".cart-container").removeClass("blurred");
                 $("#btnCompleteOrder").prop("disabled", false);
                 $(".form-error.payment-meth")
                     .addClass("show")
